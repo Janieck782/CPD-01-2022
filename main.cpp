@@ -14,6 +14,12 @@ using std::ifstream;
 using std::ostringstream;
 using std::istringstream;
 
+float truncar(float nro){
+     long x = 100 * nro;
+     float y = (float)x / (float)100;
+     return y;
+}
+
 using namespace std;
 
 int comprobar(int pregunta,string respuestas){
@@ -108,13 +114,21 @@ int main()
 
 
 
+
     string linea;
     char delimitador = ';';
 
 
     getline(archivo, linea);
 
-
+    ofstream salida("reporte.csv");
+    salida<<'\u0022'<< "Token De Estudiante"<<'\u0022';
+    salida<<","<<'\u0022'<< "Correctas"<<'\u0022';
+    salida<<","<<'\u0022'<<"Incorrectas"<<'\u0022';
+    salida<<","<<'\u0022'<< "Omitidas"<<'\u0022';
+    salida<<","<<'\u0022'<< "Puntaje"<<'\u0022';
+    salida<<","<<'\u0022'<< "Nota"<<'\u0022';
+    salida<<endl;
     while (getline(archivo, linea))
     {
         stringstream stream(linea); // Convertir la cadena a un stream
@@ -143,16 +157,16 @@ int main()
 
         res[1] = comprobar(1,Pregunta01);
         res[2] = comprobar(2,Pregunta02);
-        res[3] = comprobar(2,Pregunta02);
-        res[4] = comprobar(2,Pregunta02);
-        res[5] = comprobar(2,Pregunta02);
-        res[6] = comprobar(2,Pregunta02);
-        res[7] = comprobar(2,Pregunta02);
-        res[8] = comprobar(2,Pregunta02);
-        res[9] = comprobar(2,Pregunta02);
-        res[10] = comprobar(2,Pregunta02);
-        res[11] = comprobar(2,Pregunta02);
-        res[12] = comprobar(2,Pregunta02);
+        res[3] = comprobar(3,Pregunta03);
+        res[4] = comprobar(4,Pregunta04);
+        res[5] = comprobar(5,Pregunta05);
+        res[6] = comprobar(6,Pregunta06);
+        res[7] = comprobar(7,Pregunta07);
+        res[8] = comprobar(8,Pregunta08);
+        res[9] = comprobar(9,Pregunta09);
+        res[10] = comprobar(10,Pregunta10);
+        res[11] = comprobar(11,Pregunta11);
+        res[12] = comprobar(12,Pregunta12);
 
         for(int i = 1; i<13;i++ ){
             if(res[i]==-1){
@@ -164,13 +178,25 @@ int main()
             if(res[i]==1){
                 correctas++;
             }
-
-
         }
 
-    float puntaje =  (correctas*0.5)-(incorrectas*0.12);
-    cout<< puntaje;
+    float puntaje = (correctas*0.5)-(incorrectas*0.12);
+    float nota = puntaje + 1 ;
 
+    nota = truncar(nota);
+    if(nota<1){
+        nota=1;
+    }
+
+
+
+    salida<< TokenDeEstudiante;
+    salida<<","<<'\u0022'<< correctas<<'\u0022';
+    salida<<","<<'\u0022'<<incorrectas<<'\u0022';
+    salida<<","<<'\u0022'<< omitidas<<'\u0022';
+    salida<<","<<'\u0022'<< puntaje<<'\u0022';
+    salida<<","<<'\u0022'<< nota<<'\u0022';
+    salida<<endl;
 
     }
 
