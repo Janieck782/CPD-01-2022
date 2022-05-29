@@ -1,9 +1,0 @@
-# depslib dependency file v1.0
-1653257886 source:c:\users\jean_\onedrive\escritorio\cpd\cpd\main.cpp
-	<iostream>
-	<fstream>
-	<vector>
-	<sstream>
-	<map>
-	<cmath>
-
