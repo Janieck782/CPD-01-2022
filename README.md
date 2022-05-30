@@ -12,7 +12,7 @@ Forma de ejecutar la version Sequencial:
     g++ -o ejecutable main.cpp
     
     Para ejecutar:
-    ./-ejecutable
+    ./ejecutable
 
 Forma de ejecutar la version OpenMP
 
