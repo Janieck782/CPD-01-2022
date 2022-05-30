@@ -3,7 +3,9 @@
 Forma de ejecutar la version Sequencial:
 
 1- Agregar a la carpeta Sequencial el archivo "pruebas.csv" 
+
 2- Abrir terminal en la ubicacion de la carpeta Sequencial
+
 3- Ingresar las siguientes lineas de comando:
 
     Para compilar:
@@ -15,7 +17,9 @@ Forma de ejecutar la version Sequencial:
 Forma de ejecutar la version OpenMP
 
 1- Agregar a la carpeta OpenMP el archivo "pruebas.csv" 
+
 2- Abrir terminal en la ubicacion de la carpeta OpenMP
+
 3- Ingresar las siguientes lineas de comando:
 
     Para compilar:
