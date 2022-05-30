@@ -122,10 +122,6 @@ int main()
     getline(archivo, linea);
 
     ofstream salida("reporte.csv");
-    salida<<"Integrantes: "<<endl;
-    salida<<"Jean Sandoval"<<endl;
-    salida<<"Matias Silva"<<endl;
-    salida<<"Luciano Donoso"<<endl;
     salida<<'\u0022'<< "Token De Estudiante"<<'\u0022';
     salida<<","<<'\u0022'<< "Correctas"<<'\u0022';
     salida<<","<<'\u0022'<<"Incorrectas"<<'\u0022';
